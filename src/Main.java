@@ -2,6 +2,8 @@
 import Database.Database;
 import Database.UserAdapter;
 import Views.WelcomeScreen;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,11 +24,10 @@ public class Main {
         // TODO: 
         // RFID-Booten (Fehlerbehebung)
         UserAdapter mUa = new UserAdapter();
-        mUa.createUser("asdf", "asdf", "asdf", "asdf", true);
-        mUa.createUser("asdf", "asdf", "asdf", "asdf", true);
-        mUa.createUser("asdf", "asdf", "asdf", "asdf", true);
+        mUa.createUser("asdf", "asdf", "asdf", "test", true);
+
         
-        mUa.getUserByUID("asdf");
+        ArrayList<HashMap<String, Object>> check = mUa.getUserByUID("test");
         
 
         //Start des Screens

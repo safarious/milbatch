@@ -10,6 +10,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -69,8 +71,9 @@ public class UserAdapter {
     /**
      * Find User by UID
      * @param uid 
+     * @return  ArrayList<HashMap<String, Object>>
      */
-    public void getUserByUID(String uid) {
+    public ArrayList<HashMap<String, Object>> getUserByUID(String uid) {
         Database mDb = new Database();
         try {
 
@@ -89,15 +92,28 @@ public class UserAdapter {
             mResultSet.beforeFirst();
             
             
-            int i;
+            ArrayList<HashMap<String, Object>> mArrayList = new ArrayList<>();
+                
             while(mResultSet.next()){
-               
+                
+                HashMap<String, Object> mHashMap = new HashMap<>();
                 System.out.println("test new: " + mResultSet.getRow());
                 
+                mHashMap.put(RANK, mResultSet.getString(1));
+                mHashMap.put(PRENAME, mResultSet.getString(2));
+                mHashMap.put(LASTNAME, mResultSet.getString(3));
+                mHashMap.put(UID, mResultSet.getString(4));
+                mHashMap.put(AVAILABLE, mResultSet.getBoolean(5));
+                mArrayList.add(mHashMap);
+   
             }
+            
+            return mArrayList;
 
         } catch (SQLException ex) {
             Logger.getLogger(UserAdapter.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        return null;
     }
 }
