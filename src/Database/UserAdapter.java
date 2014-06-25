@@ -29,13 +29,9 @@ public class UserAdapter {
 
     public static final String DATABASE_TABLE = "TBL_USER";
 
-    //Konstruktor
-    public UserAdapter() {
-
-    }
 
     /**
-     * Create a new User
+     * Create a new User.
      * @param grad
      * @param vorname
      * @param nachname
@@ -69,7 +65,7 @@ public class UserAdapter {
 
     
     /**
-     * Find User by UID
+     * Find User by UID.
      * @param uid 
      * @return  ArrayList<HashMap<String, Object>>
      */
@@ -115,5 +111,47 @@ public class UserAdapter {
         }
         
         return null;
+    }
+    
+    
+    /**
+     * Deletes all Users in Table.
+     */
+    public void deleteAllUsers(){
+        Database mDb = new Database();
+        try{
+            String DELETE_ALL_USERS = "DELETE FROM "+DATABASE_TABLE;
+            
+            Connection conn = mDb.openDatabase();
+            Statement statement = conn.createStatement();
+            statement.execute(DELETE_ALL_USERS);
+            statement.closeOnCompletion();
+            
+            
+        }catch(SQLException ex) {
+            Logger.getLogger(UserAdapter.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    /**
+     * Delets User by his UID.
+     * @param uid 
+     */
+    public void deleteUserByUID(String uid){
+        Database mDb = new Database();
+        
+        try{
+            String DELETE_USER_BY_UID = "DELETE FROM "+DATABASE_TABLE+" WHERE uid='"+uid+"'";
+            
+            Connection conn = mDb.openDatabase();
+            Statement statement = conn.createStatement();
+            statement.execute(DELETE_USER_BY_UID);
+            statement.closeOnCompletion();
+            
+        
+        }catch(SQLException ex) {
+            Logger.getLogger(UserAdapter.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

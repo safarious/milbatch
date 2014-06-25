@@ -29,6 +29,8 @@ public class Main {
         
         ArrayList<HashMap<String, Object>> check = mUa.getUserByUID("test");
         
+        mUa.deleteUserByUID("test");
+        
 
         //Start des Screens
         WelcomeScreen welcomeScreen = new WelcomeScreen();
