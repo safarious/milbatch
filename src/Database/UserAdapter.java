@@ -32,6 +32,14 @@ public class UserAdapter {
 
     }
 
+    /**
+     * Create a new User
+     * @param grad
+     * @param vorname
+     * @param nachname
+     * @param uid
+     * @param available 
+     */
     public void createUser(String grad, String vorname, String nachname, String uid, boolean available) {
         Database mDb = new Database();
         try {
@@ -57,6 +65,11 @@ public class UserAdapter {
         }
     }
 
+    
+    /**
+     * Find User by UID
+     * @param uid 
+     */
     public void getUserByUID(String uid) {
         Database mDb = new Database();
         try {
@@ -72,24 +85,17 @@ public class UserAdapter {
             
             mResultSet.last();
             final int size = mResultSet.getRow();
-            System.out.println("Size of Shit : " + size);
+            System.out.println("Size of Right Entry's : " + size);
             mResultSet.beforeFirst();
+            
             
             int i;
             while(mResultSet.next()){
-                
-                for (i = 1; i <= size; i++){
-                   System.out.println("testing :" + i);
-                    //auslese der natürlichen gewinner
-                }
+               
+                System.out.println("test new: " + mResultSet.getRow());
                 
             }
 
-
-            //Inhalt auslesen
-          /* while (mResultSet.next()){
-               
-             }*/
         } catch (SQLException ex) {
             Logger.getLogger(UserAdapter.class.getName()).log(Level.SEVERE, null, ex);
         }
