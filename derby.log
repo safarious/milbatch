@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Wed Jun 25 14:49:58 CEST 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0146-d313-5768-0000070d8040 
+on database directory /Users/tzhware7/.milbatch with class loader sun.misc.Launcher$AppClassLoader@23b561a2 
+Loaded from file:/Users/tzhware7/NetBeansProjects/MilBatch/src/Libs/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_45-b18
+user.dir=/Users/tzhware7/NetBeansProjects/MilBatch
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.9.3
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
