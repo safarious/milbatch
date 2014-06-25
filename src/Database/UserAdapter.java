@@ -114,6 +114,38 @@ public class UserAdapter {
     }
     
     
+    
+    /**
+     * Modify current User by UID.
+     * @param grad
+     * @param vorname
+     * @param nachname
+     * @param uid
+     * @param available 
+     */
+    public void modifyUserByUid(String grad, String vorname, String nachname, String uid, boolean available){
+        Database mDb = new Database();
+        try{
+            String MODIFY_USER_BY_UID = "UPDATE "+DATABASE_TABLE
+                    +   " SET "+RANK+"='"+grad+"', "+PRENAME+"='"+vorname+"', "+LASTNAME+"='"+nachname
+                    +   "', "+UID+"='"+uid+"', "+AVAILABLE+"='"+available+"' WHERE uid='"+uid+"'";
+            
+            Connection conn = mDb.openDatabase();
+            Statement statement = conn.createStatement();
+            statement.execute(MODIFY_USER_BY_UID);
+            statement.closeOnCompletion();
+            
+            
+        }catch(SQLException ex) {
+            Logger.getLogger(UserAdapter.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    
+    
+    
+    
     /**
      * Deletes all Users in Table.
      */
@@ -138,7 +170,7 @@ public class UserAdapter {
      * Delets User by his UID.
      * @param uid 
      */
-    public void deleteUserByUID(String uid){
+    public void deleteUserByUid(String uid){
         Database mDb = new Database();
         
         try{

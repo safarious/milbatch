@@ -26,10 +26,11 @@ public class Main {
         UserAdapter mUa = new UserAdapter();
         mUa.createUser("asdf", "asdf", "asdf", "test", true);
 
-        
+        mUa.modifyUserByUid("LOL", "LOL", "LOL", "test", false);
         ArrayList<HashMap<String, Object>> check = mUa.getUserByUID("test");
+        System.out.println(check.toString());
         
-        mUa.deleteUserByUID("test");
+        mUa.deleteUserByUid("test");
         
 
         //Start des Screens
