@@ -67,7 +67,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(239, 239, 239))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,7 +81,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        jButton3.getAccessibleContext().setAccessibleName("Accept");
         jButton3.getAccessibleContext().setAccessibleDescription("Accept");
 
         pack();
@@ -90,6 +89,11 @@ public class WelcomeScreen extends javax.swing.JFrame {
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // Accepted the Agreement
         System.out.println("Accept");
+                //Start des Screens
+        HauptScreen hauptscreen = new HauptScreen();
+        hauptscreen.setVisible(true);
+        this.dispose();
+        
         
     }//GEN-LAST:event_jButton3MouseClicked
 
