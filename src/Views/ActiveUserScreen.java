@@ -98,7 +98,7 @@ public class ActiveUserScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btExportActiveUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExportActiveUsersActionPerformed
-        // TODO add your handling code here:
+        // Export to txt-file on Desktop
     }//GEN-LAST:event_btExportActiveUsersActionPerformed
 
     private void btCloseActiveUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCloseActiveUsersActionPerformed
