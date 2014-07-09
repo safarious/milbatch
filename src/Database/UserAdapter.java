@@ -64,6 +64,62 @@ public class UserAdapter {
     }
 
     
+    public String[] getAllActiveUsers(){
+        Database mDb = new Database();
+        try {
+
+            String GET_ALL_ACTIVE_USERS = "SELECT grad,vorname,nachname FROM " + DATABASE_TABLE + " WHERE availabLe='" + true + "'";
+
+            Connection conn = mDb.openDatabase();
+            PreparedStatement mPreparedStatement = conn.prepareStatement(GET_ALL_ACTIVE_USERS, ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+            ResultSet mResultSet = mPreparedStatement.executeQuery();
+            mPreparedStatement.closeOnCompletion();
+
+            
+            mResultSet.last();
+            final int size = mResultSet.getRow();
+            System.out.println("Size of Right Entry's : " + size);
+            mResultSet.beforeFirst();
+            
+            
+            ArrayList<HashMap<String, Object>> mArrayList = new ArrayList<>();
+                
+            while(mResultSet.next()){
+                
+                HashMap<String, Object> mHashMap = new HashMap<>();
+                System.out.println("test new: " + mResultSet.getRow());
+                
+                mHashMap.put(RANK, mResultSet.getString(1));
+                mHashMap.put(PRENAME, mResultSet.getString(2));
+                mHashMap.put(LASTNAME, mResultSet.getString(3));
+                mArrayList.add(mHashMap);
+   
+            }
+            
+            String[] rowarray = {"Keine Soldaten in der Anlage"};
+            for (int j = 0; j < mArrayList.size(); j++) {
+                
+                HashMap<String, Object> map = mArrayList.get(j);
+                String rank = (String) map.get(UserAdapter.RANK);
+                String prename = (String) map.get(UserAdapter.PRENAME);
+                String lastname = (String) map.get(UserAdapter.LASTNAME);
+                String rowentry = rank + ", " + prename + " " + lastname;
+                
+                rowarray[j] = rowentry;           
+            }
+            
+            
+            
+            return rowarray;
+
+        } catch (SQLException ex) {
+            Logger.getLogger(UserAdapter.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return null;
+    }
+    
     /**
      * Find User by UID.
      * @param uid 

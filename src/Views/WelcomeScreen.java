@@ -89,8 +89,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
 
     private void btAcceptMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAcceptMouseClicked
         // Accepted the Agreement
-        System.out.println("Accept");
-                //Start des Screens
         HauptScreen hauptscreen = new HauptScreen();
         hauptscreen.setVisible(true);
         this.dispose();
@@ -100,7 +98,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
 
     private void btDeclineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDeclineMouseClicked
         // Declined the Agreement
-        System.out.println("Decline");
         System.exit(0);
     }//GEN-LAST:event_btDeclineMouseClicked
 
