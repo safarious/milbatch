@@ -23,6 +23,7 @@ public class Main {
     public static void main(String[] args) {
         // TODO: 
         // RFID-Booten (Fehlerbehebung)
+        /*
         UserAdapter mUa = new UserAdapter();
         mUa.createUser("asdf", "asdf", "asdf", "test", true);
 
@@ -30,7 +31,7 @@ public class Main {
         ArrayList<HashMap<String, Object>> check = mUa.getUserByUID("test");
         System.out.println(check.toString());
         
-        mUa.deleteUserByUid("test");
+        mUa.deleteUserByUid("test");*/
         
 
         //Start des Screens

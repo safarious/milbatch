@@ -40,6 +40,9 @@ public class HauptScreen extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        btStartMonitoring = new javax.swing.JButton();
+        btShowUsers = new javax.swing.JButton();
+        jSeparator4 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         lblRank = new javax.swing.JLabel();
         txtRank = new javax.swing.JTextField();
@@ -63,15 +66,35 @@ public class HauptScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        btStartMonitoring.setText("Start Monitoring Service");
+
+        btShowUsers.setText("Show Active Users");
+        btShowUsers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btShowUsersActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 624, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(btStartMonitoring)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 271, Short.MAX_VALUE)
+                .addComponent(btShowUsers))
+            .addComponent(jSeparator4)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(215, Short.MAX_VALUE)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btStartMonitoring)
+                    .addComponent(btShowUsers))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Monitoring", jPanel1);
@@ -245,6 +268,11 @@ public class HauptScreen extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btClearMilBatchActionPerformed
 
+    private void btShowUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btShowUsersActionPerformed
+        ActiveUserScreen activeuserscreen = new ActiveUserScreen();
+        activeuserscreen.setVisible(true);
+    }//GEN-LAST:event_btShowUsersActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -284,6 +312,8 @@ public class HauptScreen extends javax.swing.JFrame {
     private javax.swing.JButton btClearMilBatch;
     private javax.swing.JButton btSaveUser;
     private javax.swing.JButton btScan;
+    private javax.swing.JButton btShowUsers;
+    private javax.swing.JButton btStartMonitoring;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
@@ -294,6 +324,7 @@ public class HauptScreen extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblLastname;
     private javax.swing.JLabel lblPrename;
