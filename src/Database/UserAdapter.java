@@ -181,6 +181,8 @@ public class UserAdapter {
             statement.execute(DELETE_USER_BY_UID);
             statement.closeOnCompletion();
             
+            System.out.println("Alle User wurden erfolgreich gelöscht");
+            
         
         }catch(SQLException ex) {
             Logger.getLogger(UserAdapter.class.getName()).log(Level.SEVERE, null, ex);
