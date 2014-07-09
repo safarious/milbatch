@@ -17,6 +17,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
      */
     public WelcomeScreen() {
         initComponents();
+        txtaWelcometext.setText("Nutzungsbedingungen");
     }
 
     /**
@@ -29,29 +30,29 @@ public class WelcomeScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jButton3 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        txtaWelcometext = new javax.swing.JTextArea();
+        btAccept = new javax.swing.JButton();
+        btDecline = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jTextArea2.setEditable(false);
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        txtaWelcometext.setEditable(false);
+        txtaWelcometext.setColumns(20);
+        txtaWelcometext.setRows(5);
+        jScrollPane2.setViewportView(txtaWelcometext);
 
-        jButton3.setText("Accept");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        btAccept.setText("Accept");
+        btAccept.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                btAcceptMouseClicked(evt);
             }
         });
 
-        jButton1.setText("Decline");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btDecline.setText("Decline");
+        btDecline.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                btDeclineMouseClicked(evt);
             }
         });
 
@@ -63,9 +64,9 @@ public class WelcomeScreen extends javax.swing.JFrame {
                 .addGap(239, 239, 239)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btDecline, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(239, 239, 239))
         );
@@ -76,17 +77,17 @@ public class WelcomeScreen extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3))
+                    .addComponent(btDecline)
+                    .addComponent(btAccept))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        jButton3.getAccessibleContext().setAccessibleDescription("Accept");
+        btAccept.getAccessibleContext().setAccessibleDescription("Accept");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void btAcceptMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAcceptMouseClicked
         // Accepted the Agreement
         System.out.println("Accept");
                 //Start des Screens
@@ -95,13 +96,13 @@ public class WelcomeScreen extends javax.swing.JFrame {
         this.dispose();
         
         
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_btAcceptMouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void btDeclineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDeclineMouseClicked
         // Declined the Agreement
         System.out.println("Decline");
         System.exit(0);
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_btDeclineMouseClicked
 
     /**
      * @param args the command line arguments
@@ -139,9 +140,9 @@ public class WelcomeScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btAccept;
+    private javax.swing.JButton btDecline;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea txtaWelcometext;
     // End of variables declaration//GEN-END:variables
 }

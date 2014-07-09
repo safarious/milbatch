@@ -28,9 +28,9 @@
               <EmptySpace min="-2" pref="239" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jButton1" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="btDecline" min="-2" pref="100" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton3" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="btAccept" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -45,8 +45,8 @@
               <Component id="jScrollPane2" min="-2" pref="331" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btDecline" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btAccept" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="13" max="32767" attributes="0"/>
           </Group>
@@ -61,7 +61,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="jTextArea2">
+        <Component class="javax.swing.JTextArea" name="txtaWelcometext">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="20"/>
@@ -70,7 +70,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="btAccept">
       <Properties>
         <Property name="text" type="java.lang.String" value="Accept"/>
       </Properties>
@@ -78,15 +78,15 @@
         <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value="Accept"/>
       </AccessibilityProperties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton3MouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btAcceptMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btDecline">
       <Properties>
         <Property name="text" type="java.lang.String" value="Decline"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btDeclineMouseClicked"/>
       </Events>
     </Component>
   </SubComponents>

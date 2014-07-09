@@ -6,6 +6,9 @@
 
 package Views;
 
+import Database.UserAdapter;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author tzhware7
@@ -30,13 +33,29 @@ public class HauptScreen extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jEditorPane1 = new javax.swing.JEditorPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        lblRank = new javax.swing.JLabel();
+        txtRank = new javax.swing.JTextField();
+        lblPrename = new javax.swing.JLabel();
+        txtPrename = new javax.swing.JTextField();
+        lblLastname = new javax.swing.JLabel();
+        txtLastname = new javax.swing.JTextField();
+        btScan = new javax.swing.JButton();
+        lblUID = new javax.swing.JLabel();
+        btSaveUser = new javax.swing.JButton();
 
         jMenuItem1.setText("jMenuItem1");
 
         jMenu1.setText("jMenu1");
+
+        jLabel4.setText("jLabel4");
+
+        jScrollPane1.setViewportView(jEditorPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,15 +72,86 @@ public class HauptScreen extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Monitoring", jPanel1);
 
+        lblRank.setText("Rang");
+
+        lblPrename.setText("Vorname");
+
+        txtPrename.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPrenameActionPerformed(evt);
+            }
+        });
+
+        lblLastname.setText("Nachname");
+
+        txtLastname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLastnameActionPerformed(evt);
+            }
+        });
+
+        btScan.setText("Scan Batch");
+
+        lblUID.setText(" ");
+
+        btSaveUser.setText("Save User");
+        btSaveUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSaveUserActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 624, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPrename)
+                            .addComponent(lblRank, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtPrename, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(txtRank)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblLastname)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtLastname)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(btScan)
+                .addGap(18, 18, 18)
+                .addComponent(lblUID, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 395, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btSaveUser, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblRank, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPrename, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPrename))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtLastname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLastname))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btScan)
+                    .addComponent(lblUID))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addComponent(btSaveUser)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Backend", jPanel2);
@@ -85,6 +175,41 @@ public class HauptScreen extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtPrenameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrenameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrenameActionPerformed
+
+    private void txtLastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLastnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLastnameActionPerformed
+
+    /*
+    Savebutton Action
+    */
+    private void btSaveUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveUserActionPerformed
+        
+        //Auslese der Daten.
+        String rank = txtRank.getText();
+        String prename = txtPrename.getText();
+        String lastname = txtLastname.getText();
+        String uid = lblUID.getText();
+        
+        //Speichern
+        UserAdapter mUa = new UserAdapter();
+        mUa.createUser(rank, prename, lastname, uid, false);
+        
+        //Felder clearen
+        txtRank.setText("");
+        txtPrename.setText("");
+        txtLastname.setText("");
+        lblUID.setText("");
+        
+        //Meldung an User
+        JOptionPane.showMessageDialog(this, "User wurde erfolgreich erstellt");
+        
+        
+    }//GEN-LAST:event_btSaveUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,10 +247,22 @@ public class HauptScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btSaveUser;
+    private javax.swing.JButton btScan;
+    private javax.swing.JEditorPane jEditorPane1;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblLastname;
+    private javax.swing.JLabel lblPrename;
+    private javax.swing.JLabel lblRank;
+    private javax.swing.JLabel lblUID;
+    private javax.swing.JTextField txtLastname;
+    private javax.swing.JTextField txtPrename;
+    private javax.swing.JTextField txtRank;
     // End of variables declaration//GEN-END:variables
 }
